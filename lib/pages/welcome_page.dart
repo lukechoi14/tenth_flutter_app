@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:tenth_flutter_app/misc/colors.dart';
 import 'package:tenth_flutter_app/widgets/app_large_text.dart';
 import 'package:tenth_flutter_app/widgets/app_text.dart';
+import 'package:tenth_flutter_app/widgets/responsive_button.dart';
 
 class WelcomePage extends StatefulWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -49,7 +50,9 @@ class _WelcomePageState extends State<WelcomePage> {
                           width: 250,
                         child:AppText(size: 14, text: "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
                           color: AppColors.textColor2,),
-                        )
+                        ),
+                        SizedBox(height: 40,),
+                        ResponsiveButton(width: 120,)
                       ],
                     )
                   ],
