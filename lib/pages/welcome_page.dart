@@ -13,11 +13,8 @@ class WelcomePage extends StatefulWidget {
 }
 
 class _WelcomePageState extends State<WelcomePage> {
-  List images = [
-    "welcome-one.png",
-    "welcome-two.png",
-    "welcome-three.png"
-  ];
+  List images = ["welcome-one.png", "welcome-two.png", "welcome-three.png"];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,15 +26,11 @@ class _WelcomePageState extends State<WelcomePage> {
               width: double.maxFinite,
               height: double.maxFinite,
               decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage(
-                    "img/"+images[index]
-                  ),
-                  fit: BoxFit.cover
-                )
-              ),
+                  image: DecorationImage(
+                      image: AssetImage("img/" + images[index]),
+                      fit: BoxFit.cover)),
               child: Container(
-                margin: const EdgeInsets.only(top:150,left: 20,right: 20),
+                margin: const EdgeInsets.only(top: 150, left: 20, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -46,26 +39,37 @@ class _WelcomePageState extends State<WelcomePage> {
                       children: [
                         AppLargeText(text: "Trips"),
                         AppText(size: 30, text: "Mountain"),
-                        SizedBox(height: 20,),
+                        SizedBox(
+                          height: 20,
+                        ),
                         Container(
                           width: 250,
-                        child:AppText(size: 14, text: "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
-                          color: AppColors.textColor2,),
+                          child: AppText(
+                            size: 14,
+                            text:
+                                "Be who you are and say what you feel, because those who mind don't matter and those who matter don't mind.",
+                            color: AppColors.textColor2,
+                          ),
                         ),
-                        SizedBox(height: 40,),
-                        ResponsiveButton(width: 120,)
+                        SizedBox(
+                          height: 40,
+                        ),
+                        ResponsiveButton(
+                          width: 120,
+                        )
                       ],
                     ),
                     Column(
-                      children: List.generate(3, (indexDots){
+                      children: List.generate(3, (indexDots) {
                         return Container(
                           margin: const EdgeInsets.only(bottom: 2),
                           width: 8,
-                          height: index==indexDots?25:8,
+                          height: index == indexDots ? 25 : 8,
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(8),
-                            color: index==indexDots?AppColors.mainColor:AppColors.mainColor.withOpacity(0.3)
-                          ),
+                              borderRadius: BorderRadius.circular(8),
+                              color: index == indexDots
+                                  ? AppColors.mainColor
+                                  : AppColors.mainColor.withOpacity(0.3)),
                         );
                       }),
                     )
@@ -73,8 +77,7 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
               ),
             );
-
-      }),
+          }),
     );
   }
 }
